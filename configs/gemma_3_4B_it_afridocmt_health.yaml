@@ -1,0 +1,128 @@
+model:
+  name: "google/gemma-3-4b-it"
+  model_type: "gemma"
+
+datasets:
+  # doc_health_5| yo --> en
+  - name: "AfriDocMTDataset"
+    dataset_name_or_path: "masakhane/AfriDocMT"
+    split: "test"
+    subset: "doc_health_5"
+    num_samples: -1
+    source_language: "yo"
+    target_language: "en"
+    output_file: "gemma-3-4b-it_afridocmt_yo_en.json"
+
+  # doc_health_5 | ha --> en
+  - name: "AfriDocMTDataset"
+    dataset_name_or_path: "masakhane/AfriDocMT"
+    split: "test"
+    subset: "doc_health_5"
+    num_samples: -1
+    source_language: "ha"
+    target_language: "en"
+    output_file: "gemma-3-4b-it_afridocmt_ha_en.json"
+  
+  # doc_health_5 | sw --> en
+  - name: "AfriDocMTDataset"
+    dataset_name_or_path: "masakhane/AfriDocMT"
+    split: "test"
+    subset: "doc_health_5"
+    num_samples: -1
+    source_language: "sw"
+    target_language: "en"
+    output_file: "gemma-3-4b-it_afridocmt_sw_en.json"
+  
+  # doc_health_5 | zu --> en
+  - name: "AfriDocMTDataset"
+    dataset_name_or_path: "masakhane/AfriDocMT"
+    split: "test"
+    subset: "doc_health_5"
+    num_samples: -1
+    source_language: "zu"
+    target_language: "en"
+    output_file: "gemma-3-4b-it_afridocmt_zu_en.json"
+  
+  # doc_health_5 | am --> en
+  - name: "AfriDocMTDataset"
+    dataset_name_or_path: "masakhane/AfriDocMT"
+    split: "test"
+    subset: "doc_health_5"
+    num_samples: -1
+    source_language: "am"
+    target_language: "en"
+    output_file: "gemma-3-4b-it_afridocmt_am_en.json"
+  
+  # doc_health_5| en --> yo
+  - name: "AfriDocMTDataset"
+    dataset_name_or_path: "masakhane/AfriDocMT"
+    split: "test"
+    subset: "doc_health_5"
+    num_samples: -1
+    source_language: "en"
+    target_language: "yo"
+    output_file: "gemma-3-4b-it_afridocmt_en_yo.json"
+  
+  # doc_health_5 | en --> ha
+  - name: "AfriDocMTDataset"
+    dataset_name_or_path: "masakhane/AfriDocMT"
+    split: "test"
+    subset: "doc_health_5"
+    num_samples: -1
+    source_language: "en"
+    target_language: "ha"
+    output_file: "gemma-3-4b-it_afridocmt_en_ha.json"
+  
+  # doc_health_5 | en --> sw
+  - name: "AfriDocMTDataset"
+    dataset_name_or_path: "masakhane/AfriDocMT"
+    split: "test"
+    subset: "doc_health_5"
+    num_samples: -1
+    source_language: "en"
+    target_language: "sw"
+    output_file: "gemma-3-4b-it_afridocmt_en_sw.json"
+  
+  # doc_health_5 | en --> zu
+  - name: "AfriDocMTDataset"
+    dataset_name_or_path: "masakhane/AfriDocMT"
+    split: "test"
+    subset: "doc_health_5"
+    num_samples: -1
+    source_language: "en"
+    target_language: "zu"
+    output_file: "gemma-3-4b-it_afridocmt_en_zu.json"
+  
+  # doc_health_5 | en --> am
+  - name: "AfriDocMTDataset"
+    dataset_name_or_path: "masakhane/AfriDocMT"
+    split: "test"
+    subset: "doc_health_5"
+    num_samples: -1
+    source_language: "en"
+    target_language: "am"
+    output_file: "gemma-3-4b-it_afridocmt_en_am.json"
+
+
+inference:
+  server: null  # null = start internal vLLM server, or set to "http://host:port/v1"
+  api_key: null
+  port: 30024
+  tensor_parallel_size: 1
+  data_parallel_size: 2
+  gpu_memory_utilization: 0.90
+  max_model_len: 8192
+  max_tokens: 4096
+  temperature: 0.0
+  batch_size: 4
+  max_retries: 3
+  vllm_extra_args: []
+
+metrics:
+  - bleu
+  - chrf
+  - ter
+
+output:
+  dir: "results"
+  save_translations: true
