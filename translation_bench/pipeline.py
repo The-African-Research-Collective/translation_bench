@@ -102,7 +102,7 @@ class PipelineConfig:
             batch_size=inf_cfg.get("batch_size", 16),
             max_retries=inf_cfg.get("max_retries", 3),
             vllm_extra_args=inf_cfg.get("vllm_extra_args", []),
-            metrics=cfg.get("metrics", ["bleu", "chrf", "ter"]),
+            metrics=cfg.get("metrics", ["bleu", "chrf", "ter", "chrf++"]),
             output_dir=out_cfg.get("dir", "results"),
             save_translations=out_cfg.get("save_translations", True),
         )
@@ -182,7 +182,7 @@ async def start_vllm_server(config: PipelineConfig) -> asyncio.subprocess.Proces
 async def wait_for_server(
     base_url: str,
     api_key: Optional[str] = None,
-    max_attempts: int = 300,
+    max_attempts: int = 1000,
     proc: Optional[asyncio.subprocess.Process] = None,
 ):
     url = f"{base_url.rstrip('/')}/models"

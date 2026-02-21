@@ -10,9 +10,7 @@ from typing import Dict, List
 
 from translation_bench.data.data_class import MiniBatch
 
-SYSTEM_PROMPT = """You are a helpful assistant for translating documents for low-resource languages
-You first think about the reasoning process to translate the document, and then provide the final answer
-"""
+SYSTEM_PROMPT = """You are a helpful assistant for translating documents for low-resource languages"""
 
 USER_PROMPT = """You are given a document in {source_language}. Your task is to translate the document into {target_language}.gs
 
