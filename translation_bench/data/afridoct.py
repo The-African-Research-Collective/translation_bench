@@ -65,18 +65,17 @@ class AfriDocMTDataset(Dataset):
 
     def __getitem__(self, idx):
 
+        item = self.data[idx]
+        source_language = item["source_language"]
+        target_language = item["target_language"]
+        source_text = item["source_text"]
+        target_text = item["target_text"]
+
         if self.model_type == ModelType.TRANSLATE_GEMMA:
             messages = [
                 {
                     "role": "user",
-                    "content": [
-                        {
-                            "type": "text",
-                            "source_lang_code": source_language,
-                            "target_lang_code": target_language,
-                            "text": source_text,
-                        }
-                    ]
+                    "content": f"<<<source>>>{source_language}<<<target>>>{target_language}<<<text>>>{source_text}"
                 }
             ]
 
@@ -87,12 +86,6 @@ class AfriDocMTDataset(Dataset):
             }
         
         else:
-            item = self.data[idx]
-            source_language = item["source_language"]
-            target_language = item["target_language"]
-            source_text = item["source_text"]
-            target_text = item["target_text"]
-
             user_prompt = USER_PROMPT.format(
                 source_language=source_language,
                 target_language=target_language,
