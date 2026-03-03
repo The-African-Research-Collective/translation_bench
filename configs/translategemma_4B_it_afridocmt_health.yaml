@@ -103,6 +103,108 @@ datasets:
     target_language: "am"
     output_file: "baseline/translategemma-4b-it__afridocmt_dochealth5_en_am.json"
 
+# ================================ 10 ===========================================
+
+datasets:
+  # doc_health_10| yo --> en
+  - name: "AfriDocMTDataset"
+    dataset_name_or_path: "masakhane/AfriDocMT"
+    split: "test"
+    subset: "doc_health_10"
+    num_samples: -1
+    source_language: "yo"
+    target_language: "en"
+    output_file: "baseline/translategemma-4b-it__afridocmt_dochealth10_yo_en.json"
+
+  # doc_health_10 | ha --> en
+  - name: "AfriDocMTDataset"
+    dataset_name_or_path: "masakhane/AfriDocMT"
+    split: "test"
+    subset: "doc_health_10"
+    num_samples: -1
+    source_language: "ha"
+    target_language: "en"
+    output_file: "baseline/translategemma-4b-it__afridocmt_dochealth10_ha_en.json"
+  
+  # doc_health_10 | sw --> en
+  - name: "AfriDocMTDataset"
+    dataset_name_or_path: "masakhane/AfriDocMT"
+    split: "test"
+    subset: "doc_health_10"
+    num_samples: -1
+    source_language: "sw"
+    target_language: "en"
+    output_file: "baseline/translategemma-4b-it__afridocmt_dochealth10_sw_en.json"
+  
+  # doc_health_10 | zu --> en
+  - name: "AfriDocMTDataset"
+    dataset_name_or_path: "masakhane/AfriDocMT"
+    split: "test"
+    subset: "doc_health_10"
+    num_samples: -1
+    source_language: "zu"
+    target_language: "en"
+    output_file: "baseline/translategemma-4b-it__afridocmt_dochealth10_zu_en.json"
+  
+  # doc_health_10 | am --> en
+  - name: "AfriDocMTDataset"
+    dataset_name_or_path: "masakhane/AfriDocMT"
+    split: "test"
+    subset: "doc_health_10"
+    num_samples: -1
+    source_language: "am"
+    target_language: "en"
+    output_file: "baseline/translategemma-4b-it__afridocmt_dochealth10_am_en.json"
+  
+  # doc_health_10| en --> yo
+  - name: "AfriDocMTDataset"
+    dataset_name_or_path: "masakhane/AfriDocMT"
+    split: "test"
+    subset: "doc_health_10"
+    num_samples: -1
+    source_language: "en"
+    target_language: "yo"
+    output_file: "baseline/translategemma-4b-it__afridocmt_dochealth10_en_yo.json"
+  
+  # doc_health_10 | en --> ha
+  - name: "AfriDocMTDataset"
+    dataset_name_or_path: "masakhane/AfriDocMT"
+    split: "test"
+    subset: "doc_health_10"
+    num_samples: -1
+    source_language: "en"
+    target_language: "ha"
+    output_file: "baseline/translategemma-4b-it__afridocmt_dochealth10_en_ha.json"
+  
+  # doc_health_10 | en --> sw
+  - name: "AfriDocMTDataset"
+    dataset_name_or_path: "masakhane/AfriDocMT"
+    split: "test"
+    subset: "doc_health_10"
+    num_samples: -1
+    source_language: "en"
+    target_language: "sw"
+    output_file: "baseline/translategemma-4b-it__afridocmt_dochealth10_en_sw.json"
+  
+  # doc_health_10 | en --> zu
+  - name: "AfriDocMTDataset"
+    dataset_name_or_path: "masakhane/AfriDocMT"
+    split: "test"
+    subset: "doc_health_10"
+    num_samples: -1
+    source_language: "en"
+    target_language: "zu"
+    output_file: "baseline/translategemma-4b-it__afridocmt_dochealth10_en_zu.json"
+  
+  # doc_health_10 | en --> am
+  - name: "AfriDocMTDataset"
+    dataset_name_or_path: "masakhane/AfriDocMT"
+    split: "test"
+    subset: "doc_health_10"
+    num_samples: -1
+    source_language: "en"
+    target_language: "am"
+    output_file: "baseline/translategemma-4b-it__afridocmt_dochealth10_en_am.json"
 
 inference:
   server: null  # null = start internal vLLM server, or set to "http://host:port/v1"
