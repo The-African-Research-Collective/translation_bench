@@ -1,5 +1,4 @@
 import pandas as pd
-from enum import Enum
 from transformers import AutoTokenizer
 
 from torch.utils.data import Dataset
@@ -8,7 +7,7 @@ from datasets import load_dataset
 from jinja2 import Environment
 from typing import Dict, List
 
-from translation_bench.data.data_class import MiniBatch
+from translation_bench.data.data_class import MiniBatch, ModelType
 
 SYSTEM_PROMPT = """You are a helpful assistant for translating documents for low-resource languages"""
 
@@ -28,11 +27,6 @@ MAPPING = {
     "zu": "Zulu",
     "en": "English",
 }
-
-class ModelType(Enum):
-    QWEN = "qwen"
-    GEMMA = "gemma"
-    TRANSLATE_GEMMA = "translate_gemma"
 
 
 class AfriDocMTDataset(Dataset):

@@ -1,0 +1,136 @@
+model:
+  name: "google/gemma-3-4b-it"
+  model_type: "gemma"
+
+datasets:
+  # yor_Latn --> eng_Latn
+  - name: "FloresPlusDataset"
+    dataset_name_or_path: "openlanguagedata/flores_plus"
+    split: "devtest"
+    num_samples: -1
+    source_language: "yor_Latn"
+    target_language: "eng_Latn"
+    output_file: "baseline/flores_plus/gemma-3-4b-it_flores_plus_yor_latn_eng_latn.json"
+
+  # ibo_Latn --> eng_Latn
+  - name: "FloresPlusDataset"
+    dataset_name_or_path: "openlanguagedata/flores_plus"
+    split: "devtest"
+    num_samples: -1
+    source_language: "ibo_Latn"
+    target_language: "eng_Latn"
+    output_file: "baseline/flores_plus/gemma-3-4b-it_flores_plus_ibo_latn_eng_latn.json"
+
+  # hau_Latn --> eng_Latn
+  - name: "FloresPlusDataset"
+    dataset_name_or_path: "openlanguagedata/flores_plus"
+    split: "devtest"
+    num_samples: -1
+    source_language: "hau_Latn"
+    target_language: "eng_Latn"
+    output_file: "baseline/flores_plus/gemma-3-4b-it_flores_plus_hau_latn_eng_latn.json"
+
+  # swh_Latn --> eng_Latn
+  - name: "FloresPlusDataset"
+    dataset_name_or_path: "openlanguagedata/flores_plus"
+    split: "devtest"
+    num_samples: -1
+    source_language: "swh_Latn"
+    target_language: "eng_Latn"
+    output_file: "baseline/flores_plus/gemma-3-4b-it_flores_plus_swh_latn_eng_latn.json"
+
+  # zul_Latn --> eng_Latn
+  - name: "FloresPlusDataset"
+    dataset_name_or_path: "openlanguagedata/flores_plus"
+    split: "devtest"
+    num_samples: -1
+    source_language: "zul_Latn"
+    target_language: "eng_Latn"
+    output_file: "baseline/flores_plus/gemma-3-4b-it_flores_plus_zul_latn_eng_latn.json"
+
+  # amh_Ethi --> eng_Latn
+  - name: "FloresPlusDataset"
+    dataset_name_or_path: "openlanguagedata/flores_plus"
+    split: "devtest"
+    num_samples: -1
+    source_language: "amh_Ethi"
+    target_language: "eng_Latn"
+    output_file: "baseline/flores_plus/gemma-3-4b-it_flores_plus_amh_ethi_eng_latn.json"
+
+  # eng_Latn --> yor_Latn
+  - name: "FloresPlusDataset"
+    dataset_name_or_path: "openlanguagedata/flores_plus"
+    split: "devtest"
+    num_samples: -1
+    source_language: "eng_Latn"
+    target_language: "yor_Latn"
+    output_file: "baseline/flores_plus/gemma-3-4b-it_flores_plus_eng_latn_yor_latn.json"
+
+  # eng_Latn --> ibo_Latn
+  - name: "FloresPlusDataset"
+    dataset_name_or_path: "openlanguagedata/flores_plus"
+    split: "devtest"
+    num_samples: -1
+    source_language: "eng_Latn"
+    target_language: "ibo_Latn"
+    output_file: "baseline/flores_plus/gemma-3-4b-it_flores_plus_eng_latn_ibo_latn.json"
+
+  # eng_Latn --> hau_Latn
+  - name: "FloresPlusDataset"
+    dataset_name_or_path: "openlanguagedata/flores_plus"
+    split: "devtest"
+    num_samples: -1
+    source_language: "eng_Latn"
+    target_language: "hau_Latn"
+    output_file: "baseline/flores_plus/gemma-3-4b-it_flores_plus_eng_latn_hau_latn.json"
+
+  # eng_Latn --> swh_Latn
+  - name: "FloresPlusDataset"
+    dataset_name_or_path: "openlanguagedata/flores_plus"
+    split: "devtest"
+    num_samples: -1
+    source_language: "eng_Latn"
+    target_language: "swh_Latn"
+    output_file: "baseline/flores_plus/gemma-3-4b-it_flores_plus_eng_latn_swh_latn.json"
+
+  # eng_Latn --> zul_Latn
+  - name: "FloresPlusDataset"
+    dataset_name_or_path: "openlanguagedata/flores_plus"
+    split: "devtest"
+    num_samples: -1
+    source_language: "eng_Latn"
+    target_language: "zul_Latn"
+    output_file: "baseline/flores_plus/gemma-3-4b-it_flores_plus_eng_latn_zul_latn.json"
+
+  # eng_Latn --> amh_Ethi
+  - name: "FloresPlusDataset"
+    dataset_name_or_path: "openlanguagedata/flores_plus"
+    split: "devtest"
+    num_samples: -1
+    source_language: "eng_Latn"
+    target_language: "amh_Ethi"
+    output_file: "baseline/flores_plus/gemma-3-4b-it_flores_plus_eng_latn_amh_ethi.json"
+
+inference:
+  server: null  # null = start internal vLLM server, or set to "http://host:port/v1"
+  api_key: null
+  port: 30024
+  tensor_parallel_size: 1
+  data_parallel_size: 2
+  gpu_memory_utilization: 0.90
+  max_model_len: 8192
+  max_tokens: 4096
+  temperature: 0.0
+  batch_size: 4
+  max_retries: 3
+  vllm_extra_args: []
+
+metrics:
+  - bleu
+  - chrf
+  - ter
+  - chrf++
+
+output:
+  dir: "results"
+  save_translations: true

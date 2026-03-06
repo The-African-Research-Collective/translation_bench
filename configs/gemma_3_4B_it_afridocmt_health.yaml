@@ -11,7 +11,7 @@ datasets:
     num_samples: -1
     source_language: "yo"
     target_language: "en"
-    output_file: "baseline/gemma-3-4b-it_afridocmt_dochealth5_yo_en.json"
+    output_file: "baseline/doc_health_5/gemma-3-4b-it_afridocmt_dochealth5_yo_en.json"
 
   # doc_health_5 | ha --> en
   - name: "AfriDocMTDataset"
@@ -21,7 +21,7 @@ datasets:
     num_samples: -1
     source_language: "ha"
     target_language: "en"
-    output_file: "baseline/gemma-3-4b-it_afridocmt_dochealth5_ha_en.json"
+    output_file: "baseline/doc_health_5/gemma-3-4b-it_afridocmt_dochealth5_ha_en.json"
   
   # doc_health_5 | sw --> en
   - name: "AfriDocMTDataset"
@@ -31,7 +31,7 @@ datasets:
     num_samples: -1
     source_language: "sw"
     target_language: "en"
-    output_file: "baseline/gemma-3-4b-it_afridocmt_dochealth5_sw_en.json"
+    output_file: "baseline/doc_health_5/gemma-3-4b-it_afridocmt_dochealth5_sw_en.json"
   
   # doc_health_5 | zu --> en
   - name: "AfriDocMTDataset"
@@ -41,7 +41,7 @@ datasets:
     num_samples: -1
     source_language: "zu"
     target_language: "en"
-    output_file: "baseline/gemma-3-4b-it_afridocmt_dochealth5_zu_en.json"
+    output_file: "baseline/doc_health_5/gemma-3-4b-it_afridocmt_dochealth5_zu_en.json"
   
   # doc_health_5 | am --> en
   - name: "AfriDocMTDataset"
@@ -51,7 +51,7 @@ datasets:
     num_samples: -1
     source_language: "am"
     target_language: "en"
-    output_file: "baseline/gemma-3-4b-it_afridocmt_dochealth5_am_en.json"
+    output_file: "baseline/doc_health_5/gemma-3-4b-it_afridocmt_dochealth5_am_en.json"
   
   # doc_health_5| en --> yo
   - name: "AfriDocMTDataset"
@@ -61,7 +61,7 @@ datasets:
     num_samples: -1
     source_language: "en"
     target_language: "yo"
-    output_file: "baseline/gemma-3-4b-it_afridocmt_dochealth5_en_yo.json"
+    output_file: "baseline/doc_health_5/gemma-3-4b-it_afridocmt_dochealth5_en_yo.json"
   
   # doc_health_5 | en --> ha
   - name: "AfriDocMTDataset"
@@ -71,7 +71,7 @@ datasets:
     num_samples: -1
     source_language: "en"
     target_language: "ha"
-    output_file: "baseline/gemma-3-4b-it_afridocmt_dochealth5_en_ha.json"
+    output_file: "baseline/doc_health_5/gemma-3-4b-it_afridocmt_dochealth5_en_ha.json"
   
   # doc_health_5 | en --> sw
   - name: "AfriDocMTDataset"
@@ -81,7 +81,7 @@ datasets:
     num_samples: -1
     source_language: "en"
     target_language: "sw"
-    output_file: "baseline/gemma-3-4b-it_afridocmt_dochealth5_en_sw.json"
+    output_file: "baseline/doc_health_5/gemma-3-4b-it_afridocmt_dochealth5_en_sw.json"
   
   # doc_health_5 | en --> zu
   - name: "AfriDocMTDataset"
@@ -91,7 +91,7 @@ datasets:
     num_samples: -1
     source_language: "en"
     target_language: "zu"
-    output_file: "baseline/gemma-3-4b-it_afridocmt_dochealth5_en_zu.json"
+    output_file: "baseline/doc_health_5/gemma-3-4b-it_afridocmt_dochealth5_en_zu.json"
   
   # doc_health_5 | en --> am
   - name: "AfriDocMTDataset"
@@ -101,7 +101,209 @@ datasets:
     num_samples: -1
     source_language: "en"
     target_language: "am"
-    output_file: "baseline/gemma-3-4b-it_afridocmt_dochealth5_en_am.json"
+    output_file: "baseline/doc_health_5/gemma-3-4b-it_afridocmt_dochealth5_en_am.json"
+
+# ================================ 10 ===========================================
+  # doc_health_10| yo --> en
+  - name: "AfriDocMTDataset"
+    dataset_name_or_path: "masakhane/AfriDocMT"
+    split: "test"
+    subset: "doc_health_10"
+    num_samples: -1
+    source_language: "yo"
+    target_language: "en"
+    output_file: "baseline/doc_health_10/gemma-3-4b-it_afridocmt_dochealth10_yo_en.json"
+
+  # doc_health_10 | ha --> en
+  - name: "AfriDocMTDataset"
+    dataset_name_or_path: "masakhane/AfriDocMT"
+    split: "test"
+    subset: "doc_health_10"
+    num_samples: -1
+    source_language: "ha"
+    target_language: "en"
+    output_file: "baseline/doc_health_10/gemma-3-4b-it_afridocmt_dochealth10_ha_en.json"
+  
+  # doc_health_10 | sw --> en
+  - name: "AfriDocMTDataset"
+    dataset_name_or_path: "masakhane/AfriDocMT"
+    split: "test"
+    subset: "doc_health_10"
+    num_samples: -1
+    source_language: "sw"
+    target_language: "en"
+    output_file: "baseline/doc_health_10/gemma-3-4b-it_afridocmt_dochealth10_sw_en.json"
+  
+  # doc_health_10 | zu --> en
+  - name: "AfriDocMTDataset"
+    dataset_name_or_path: "masakhane/AfriDocMT"
+    split: "test"
+    subset: "doc_health_10"
+    num_samples: -1
+    source_language: "zu"
+    target_language: "en"
+    output_file: "baseline/doc_health_10/gemma-3-4b-it_afridocmt_dochealth10_zu_en.json"
+  
+  # doc_health_10 | am --> en
+  - name: "AfriDocMTDataset"
+    dataset_name_or_path: "masakhane/AfriDocMT"
+    split: "test"
+    subset: "doc_health_10"
+    num_samples: -1
+    source_language: "am"
+    target_language: "en"
+    output_file: "baseline/doc_health_10/gemma-3-4b-it_afridocmt_dochealth10_am_en.json"
+  
+  # doc_health_10| en --> yo
+  - name: "AfriDocMTDataset"
+    dataset_name_or_path: "masakhane/AfriDocMT"
+    split: "test"
+    subset: "doc_health_10"
+    num_samples: -1
+    source_language: "en"
+    target_language: "yo"
+    output_file: "baseline/doc_health_10/gemma-3-4b-it_afridocmt_dochealth10_en_yo.json"
+  
+  # doc_health_10 | en --> ha
+  - name: "AfriDocMTDataset"
+    dataset_name_or_path: "masakhane/AfriDocMT"
+    split: "test"
+    subset: "doc_health_10"
+    num_samples: -1
+    source_language: "en"
+    target_language: "ha"
+    output_file: "baseline/doc_health_10/gemma-3-4b-it_afridocmt_dochealth10_en_ha.json"
+  
+  # doc_health_10 | en --> sw
+  - name: "AfriDocMTDataset"
+    dataset_name_or_path: "masakhane/AfriDocMT"
+    split: "test"
+    subset: "doc_health_10"
+    num_samples: -1
+    source_language: "en"
+    target_language: "sw"
+    output_file: "baseline/doc_health_10/gemma-3-4b-it_afridocmt_dochealth10_en_sw.json"
+  
+  # doc_health_10 | en --> zu
+  - name: "AfriDocMTDataset"
+    dataset_name_or_path: "masakhane/AfriDocMT"
+    split: "test"
+    subset: "doc_health_10"
+    num_samples: -1
+    source_language: "en"
+    target_language: "zu"
+    output_file: "baseline/doc_health_10/gemma-3-4b-it_afridocmt_dochealth10_en_zu.json"
+  
+  # doc_health_10 | en --> am
+  - name: "AfriDocMTDataset"
+    dataset_name_or_path: "masakhane/AfriDocMT"
+    split: "test"
+    subset: "doc_health_10"
+    num_samples: -1
+    source_language: "en"
+    target_language: "am"
+    output_file: "baseline/doc_health_10/gemma-3-4b-it_afridocmt_dochealth10_en_am.json"
+
+# ================================ 25 ===========================================
+  # doc_health_25| yo --> en
+  - name: "AfriDocMTDataset"
+    dataset_name_or_path: "masakhane/AfriDocMT"
+    split: "test"
+    subset: "doc_health_25"
+    num_samples: -1
+    source_language: "yo"
+    target_language: "en"
+    output_file: "baseline/doc_health_25/gemma-3-4b-it_afridocmt_dochealth25_yo_en.json"
+
+  # doc_health_25 | ha --> en
+  - name: "AfriDocMTDataset"
+    dataset_name_or_path: "masakhane/AfriDocMT"
+    split: "test"
+    subset: "doc_health_25"
+    num_samples: -1
+    source_language: "ha"
+    target_language: "en"
+    output_file: "baseline/doc_health_25/gemma-3-4b-it_afridocmt_dochealth25_ha_en.json"
+  
+  # doc_health_25 | sw --> en
+  - name: "AfriDocMTDataset"
+    dataset_name_or_path: "masakhane/AfriDocMT"
+    split: "test"
+    subset: "doc_health_25"
+    num_samples: -1
+    source_language: "sw"
+    target_language: "en"
+    output_file: "baseline/doc_health_25/gemma-3-4b-it_afridocmt_dochealth25_sw_en.json"
+  
+  # doc_health_25 | zu --> en
+  - name: "AfriDocMTDataset"
+    dataset_name_or_path: "masakhane/AfriDocMT"
+    split: "test"
+    subset: "doc_health_25"
+    num_samples: -1
+    source_language: "zu"
+    target_language: "en"
+    output_file: "baseline/doc_health_25/gemma-3-4b-it_afridocmt_dochealth25_zu_en.json"
+  
+  # doc_health_25 | am --> en
+  - name: "AfriDocMTDataset"
+    dataset_name_or_path: "masakhane/AfriDocMT"
+    split: "test"
+    subset: "doc_health_25"
+    num_samples: -1
+    source_language: "am"
+    target_language: "en"
+    output_file: "baseline/doc_health_25/gemma-3-4b-it_afridocmt_dochealth25_am_en.json"
+  
+  # doc_health_25| en --> yo
+  - name: "AfriDocMTDataset"
+    dataset_name_or_path: "masakhane/AfriDocMT"
+    split: "test"
+    subset: "doc_health_25"
+    num_samples: -1
+    source_language: "en"
+    target_language: "yo"
+    output_file: "baseline/doc_health_25/gemma-3-4b-it_afridocmt_dochealth25_en_yo.json"
+  
+  # doc_health_25 | en --> ha
+  - name: "AfriDocMTDataset"
+    dataset_name_or_path: "masakhane/AfriDocMT"
+    split: "test"
+    subset: "doc_health_25"
+    num_samples: -1
+    source_language: "en"
+    target_language: "ha"
+    output_file: "baseline/doc_health_25/gemma-3-4b-it_afridocmt_dochealth25_en_ha.json"
+  
+  # doc_health_25 | en --> sw
+  - name: "AfriDocMTDataset"
+    dataset_name_or_path: "masakhane/AfriDocMT"
+    split: "test"
+    subset: "doc_health_25"
+    num_samples: -1
+    source_language: "en"
+    target_language: "sw"
+    output_file: "baseline/doc_health_25/gemma-3-4b-it_afridocmt_dochealth25_en_sw.json"
+  
+  # doc_health_25 | en --> zu
+  - name: "AfriDocMTDataset"
+    dataset_name_or_path: "masakhane/AfriDocMT"
+    split: "test"
+    subset: "doc_health_25"
+    num_samples: -1
+    source_language: "en"
+    target_language: "zu"
+    output_file: "baseline/doc_health_25/gemma-3-4b-it_afridocmt_dochealth25_en_zu.json"
+  
+  # doc_health_25 | en --> am
+  - name: "AfriDocMTDataset"
+    dataset_name_or_path: "masakhane/AfriDocMT"
+    split: "test"
+    subset: "doc_health_25"
+    num_samples: -1
+    source_language: "en"
+    target_language: "am"
+    output_file: "baseline/doc_health_25/gemma-3-4b-it_afridocmt_dochealth25_en_am.json"
 
 
 inference:

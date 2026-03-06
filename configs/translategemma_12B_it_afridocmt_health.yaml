@@ -11,7 +11,7 @@ datasets:
     num_samples: -1
     source_language: "yo"
     target_language: "en"
-    output_file: "baseline/translategemma-12b-it__afridocmt_dochealth5_yo_en.json"
+    output_file: "baseline/doc_health_5/translategemma-12b-it__afridocmt_dochealth5_yo_en.json"
 
   # doc_health_5 | ha --> en
   - name: "AfriDocMTDataset"
@@ -21,7 +21,7 @@ datasets:
     num_samples: -1
     source_language: "ha"
     target_language: "en"
-    output_file: "baseline/translategemma-12b-it__afridocmt_dochealth5_ha_en.json"
+    output_file: "baseline/doc_health_5/translategemma-12b-it__afridocmt_dochealth5_ha_en.json"
   
   # doc_health_5 | sw --> en
   - name: "AfriDocMTDataset"
@@ -31,7 +31,7 @@ datasets:
     num_samples: -1
     source_language: "sw"
     target_language: "en"
-    output_file: "baseline/translategemma-12b-it__afridocmt_dochealth5_sw_en.json"
+    output_file: "baseline/doc_health_5/translategemma-12b-it__afridocmt_dochealth5_sw_en.json"
   
   # doc_health_5 | zu --> en
   - name: "AfriDocMTDataset"
@@ -41,7 +41,7 @@ datasets:
     num_samples: -1
     source_language: "zu"
     target_language: "en"
-    output_file: "baseline/translategemma-12b-it__afridocmt_dochealth5_zu_en.json"
+    output_file: "baseline/doc_health_5/translategemma-12b-it__afridocmt_dochealth5_zu_en.json"
   
   # doc_health_5 | am --> en
   - name: "AfriDocMTDataset"
@@ -51,7 +51,7 @@ datasets:
     num_samples: -1
     source_language: "am"
     target_language: "en"
-    output_file: "baseline/translategemma-12b-it__afridocmt_dochealth5_am_en.json"
+    output_file: "baseline/doc_health_5/translategemma-12b-it__afridocmt_dochealth5_am_en.json"
   
   # doc_health_5| en --> yo
   - name: "AfriDocMTDataset"
@@ -61,7 +61,7 @@ datasets:
     num_samples: -1
     source_language: "en"
     target_language: "yo"
-    output_file: "baseline/translategemma-12b-it__afridocmt_dochealth5_en_yo.json"
+    output_file: "baseline/doc_health_5/translategemma-12b-it__afridocmt_dochealth5_en_yo.json"
   
   # doc_health_5 | en --> ha
   - name: "AfriDocMTDataset"
@@ -71,7 +71,7 @@ datasets:
     num_samples: -1
     source_language: "en"
     target_language: "ha"
-    output_file: "baseline/translategemma-12b-it__afridocmt_dochealth5_en_ha.json"
+    output_file: "baseline/doc_health_5/translategemma-12b-it__afridocmt_dochealth5_en_ha.json"
   
   # doc_health_5 | en --> sw
   - name: "AfriDocMTDataset"
@@ -81,7 +81,7 @@ datasets:
     num_samples: -1
     source_language: "en"
     target_language: "sw"
-    output_file: "baseline/translategemma-12b-it__afridocmt_dochealth5_en_sw.json"
+    output_file: "baseline/doc_health_5/translategemma-12b-it__afridocmt_dochealth5_en_sw.json"
   
   # doc_health_5 | en --> zu
   - name: "AfriDocMTDataset"
@@ -91,7 +91,7 @@ datasets:
     num_samples: -1
     source_language: "en"
     target_language: "zu"
-    output_file: "baseline/translategemma-12b-it__afridocmt_dochealth5_en_zu.json"
+    output_file: "baseline/doc_health_5/translategemma-12b-it__afridocmt_dochealth5_en_zu.json"
   
   # doc_health_5 | en --> am
   - name: "AfriDocMTDataset"
@@ -101,7 +101,7 @@ datasets:
     num_samples: -1
     source_language: "en"
     target_language: "am"
-    output_file: "baseline/translategemma-12b-it__afridocmt_dochealth5_en_am.json"
+    output_file: "baseline/doc_health_5/translategemma-12b-it__afridocmt_dochealth5_en_am.json"
 
 
 inference:
@@ -109,7 +109,7 @@ inference:
   api_key: null
   port: 30024
   tensor_parallel_size: 1
-  data_parallel_size: 4
+  data_parallel_size: 2
   gpu_memory_utilization: 0.90
   max_model_len: 8192
   max_tokens: 4096
