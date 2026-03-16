@@ -4,6 +4,7 @@ import atexit
 import json
 import logging
 import os
+import re
 import ssl
 import time
 from dataclasses import dataclass, field
@@ -63,6 +64,7 @@ class PipelineConfig:
     metrics: List[str]
     output_dir: str
     save_translations: bool
+    reasoning: bool
 
     @classmethod
     def from_yaml(cls, path: str) -> "PipelineConfig":
@@ -107,10 +109,11 @@ class PipelineConfig:
             metrics=cfg.get("metrics", ["bleu", "chrf", "ter", "chrf++"]),
             output_dir=out_cfg.get("dir", "results"),
             save_translations=out_cfg.get("save_translations", True),
+            reasoning=cfg.get("reasoning", False),
         )
 
 
-def build_dataset(ds_config: DatasetConfig, model_name: str, model_type_str: str) -> AfriDocMTDataset:
+def build_dataset(ds_config: DatasetConfig, model_name: str, model_type_str: str, reasoning: bool = False) -> AfriDocMTDataset:
     if ds_config.name not in DATASET_REGISTRY:
         raise ValueError(
             f"Unknown dataset '{ds_config.name}'. "
@@ -124,6 +127,7 @@ def build_dataset(ds_config: DatasetConfig, model_name: str, model_type_str: str
     return ds_cls(
         tokenizer=tokenizer,
         model_type=model_type,
+        reasoning=reasoning,
         **ds_config.kwargs,
     )
 
@@ -145,7 +149,7 @@ async def start_vllm_server(config: PipelineConfig) -> asyncio.subprocess.Proces
         "serve", config.model_name,
         "--host", "0.0.0.0",
         "--port", str(config.port),
-        "--disable-log-requests",
+        # "--disable-log-requests",
         "--served-model-name", config.model_name,
         "--tensor-parallel-size", str(config.tensor_parallel_size),
         "--data-parallel-size", str(config.data_parallel_size),
@@ -310,7 +314,10 @@ async def run_inference_single(
                 await asyncio.sleep(1)
                 continue
             data = json.loads(body)
-            return data["choices"][0]["message"]["content"].strip()
+            content = data["choices"][0]["message"]["content"].strip()
+            # Extract from <answer> tags if present (chain-of-thought models)
+            match = re.search(r"<answer>(.*?)</answer>", content, re.DOTALL | re.IGNORECASE)
+            return match.group(1).strip() if match else content
         except (ConnectionError, OSError, asyncio.TimeoutError) as e:
             logger.warning(f"Connection error attempt {attempt}: {e}")
             await asyncio.sleep(2 ** attempt)
@@ -376,7 +383,7 @@ async def run_single_dataset(
     base_url: str,
 ) -> dict:
     logger.info(f"Loading dataset '{ds_config.name}'...")
-    dataset = build_dataset(ds_config, config.model_name, config.model_type)
+    dataset = build_dataset(ds_config, config.model_name, config.model_type, config.reasoning)
     loader = DataLoader(
         dataset,
         batch_size=config.batch_size,
@@ -490,6 +497,7 @@ def main():
     parser.add_argument("--api-key", default=None, help="Override API key")
     parser.add_argument("--batch-size", type=int, default=None, help="Override batch size")
     parser.add_argument("--output-dir", default=None, help="Override output directory")
+    parser.add_argument("--reasoning", action="store_true", default=None, help="Enable reasoning mode (uses chain-of-thought prompt)")
     args = parser.parse_args()
 
     config = PipelineConfig.from_yaml(args.config)
@@ -502,6 +510,8 @@ def main():
         config.batch_size = args.batch_size
     if args.output_dir is not None:
         config.output_dir = args.output_dir
+    if args.reasoning:
+        config.reasoning = True
 
     all_results = asyncio.run(run_pipeline(config))
 

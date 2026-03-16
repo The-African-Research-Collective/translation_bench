@@ -11,12 +11,25 @@ from translation_bench.data.data_class import MiniBatch, ModelType
 
 SYSTEM_PROMPT = """You are a helpful assistant for translating documents for low-resource languages"""
 
-USER_PROMPT = """You are given a document in {source_language}. Your task is to translate the document into {target_language}.gs
+USER_PROMPT = """You are given a document in {source_language}. Your task is to translate the document into {target_language}
 
 Here is the document to be translated:
 {source_text}
 
 Translation
+"""
+
+REASONING_USER_PROMPT = """You are given a document in {source_language}. Your task is to translate the document into {target_language}.
+Please follow these steps to complete the translation:
+- Read the entire document carefully to understand its context and meaning.
+- Identify any cultural references or idiomatic expressions that may need special attention during translation.
+- Show your thought process in <think> </think> tags.
+- And return the final answer in <answer> </answer> tags
+
+Here is the document to be translated:
+{source_text}
+
+Here is how i would translate this text
 """
 
 MAPPING = {
@@ -40,8 +53,10 @@ class AfriDocMTDataset(Dataset):
         source_language: str,
         target_language: str,
         model_type: ModelType = ModelType.GEMMA,
+        reasoning: bool = False,
     ):
         self.tokenizer = tokenizer
+        self.reasoning = reasoning
         self.data = self.load_dataset_hgf(
             dataset_name_or_path,
             split,
@@ -80,7 +95,8 @@ class AfriDocMTDataset(Dataset):
             }
         
         else:
-            user_prompt = USER_PROMPT.format(
+            prompt_template = REASONING_USER_PROMPT if self.reasoning else USER_PROMPT
+            user_prompt = prompt_template.format(
                 source_language=source_language,
                 target_language=target_language,
                 source_text=source_text,

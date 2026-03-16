@@ -1,0 +1,331 @@
+model:
+  name: "/home/ubuntu/grpo_frm_scratch/runs/gemma_3_12b_it_afridoc_mt_sft_multilingual_reasoning/global_step_12422/huggingface"
+  model_type: "gemma"
+
+datasets:
+  # doc_tech_5| yo --> en
+  - name: "AfriDocMTDataset"
+    dataset_name_or_path: "masakhane/AfriDocMT"
+    split: "test"
+    subset: "doc_tech_5"
+    num_samples: -1
+    source_language: "yo"
+    target_language: "en"
+    output_file: "sft/doc_tech_5/gemma-3-12b-it_afridocmt_doctech5_yo_en.json"
+
+  # doc_tech_5 | ha --> en
+  - name: "AfriDocMTDataset"
+    dataset_name_or_path: "masakhane/AfriDocMT"
+    split: "test"
+    subset: "doc_tech_5"
+    num_samples: -1
+    source_language: "ha"
+    target_language: "en"
+    output_file: "sft/doc_tech_5/gemma-3-12b-it_afridocmt_doctech5_ha_en.json"
+  
+  # doc_tech_5 | sw --> en
+  - name: "AfriDocMTDataset"
+    dataset_name_or_path: "masakhane/AfriDocMT"
+    split: "test"
+    subset: "doc_tech_5"
+    num_samples: -1
+    source_language: "sw"
+    target_language: "en"
+    output_file: "sft/doc_tech_5/gemma-3-12b-it_afridocmt_doctech5_sw_en.json"
+  
+  # doc_tech_5 | zu --> en
+  - name: "AfriDocMTDataset"
+    dataset_name_or_path: "masakhane/AfriDocMT"
+    split: "test"
+    subset: "doc_tech_5"
+    num_samples: -1
+    source_language: "zu"
+    target_language: "en"
+    output_file: "sft/doc_tech_5/gemma-3-12b-it_afridocmt_doctech5_zu_en.json"
+  
+  # doc_tech_5 | am --> en
+  - name: "AfriDocMTDataset"
+    dataset_name_or_path: "masakhane/AfriDocMT"
+    split: "test"
+    subset: "doc_tech_5"
+    num_samples: -1
+    source_language: "am"
+    target_language: "en"
+    output_file: "sft/doc_tech_5/gemma-3-12b-it_afridocmt_doctech5_am_en.json"
+  
+  # doc_tech_5| en --> yo
+  - name: "AfriDocMTDataset"
+    dataset_name_or_path: "masakhane/AfriDocMT"
+    split: "test"
+    subset: "doc_tech_5"
+    num_samples: -1
+    source_language: "en"
+    target_language: "yo"
+    output_file: "sft/doc_tech_5/gemma-3-12b-it_afridocmt_doctech5_en_yo.json"
+  
+  # doc_tech_5 | en --> ha
+  - name: "AfriDocMTDataset"
+    dataset_name_or_path: "masakhane/AfriDocMT"
+    split: "test"
+    subset: "doc_tech_5"
+    num_samples: -1
+    source_language: "en"
+    target_language: "ha"
+    output_file: "sft/doc_tech_5/gemma-3-12b-it_afridocmt_doctech5_en_ha.json"
+  
+  # doc_tech_5 | en --> sw
+  - name: "AfriDocMTDataset"
+    dataset_name_or_path: "masakhane/AfriDocMT"
+    split: "test"
+    subset: "doc_tech_5"
+    num_samples: -1
+    source_language: "en"
+    target_language: "sw"
+    output_file: "sft/doc_tech_5/gemma-3-12b-it_afridocmt_doctech5_en_sw.json"
+  
+  # doc_tech_5 | en --> zu
+  - name: "AfriDocMTDataset"
+    dataset_name_or_path: "masakhane/AfriDocMT"
+    split: "test"
+    subset: "doc_tech_5"
+    num_samples: -1
+    source_language: "en"
+    target_language: "zu"
+    output_file: "sft/doc_tech_5/gemma-3-12b-it_afridocmt_doctech5_en_zu.json"
+  
+  # doc_tech_5 | en --> am
+  - name: "AfriDocMTDataset"
+    dataset_name_or_path: "masakhane/AfriDocMT"
+    split: "test"
+    subset: "doc_tech_5"
+    num_samples: -1
+    source_language: "en"
+    target_language: "am"
+    output_file: "sft/doc_tech_5/gemma-3-12b-it_afridocmt_doctech5_en_am.json"
+
+# ================================ 10 ===========================================
+  # doc_tech_10| yo --> en
+  - name: "AfriDocMTDataset"
+    dataset_name_or_path: "masakhane/AfriDocMT"
+    split: "test"
+    subset: "doc_tech_10"
+    num_samples: -1
+    source_language: "yo"
+    target_language: "en"
+    output_file: "sft/doc_tech_10/gemma-3-12b-it_afridocmt_doctech10_yo_en.json"
+
+  # doc_tech_10 | ha --> en
+  - name: "AfriDocMTDataset"
+    dataset_name_or_path: "masakhane/AfriDocMT"
+    split: "test"
+    subset: "doc_tech_10"
+    num_samples: -1
+    source_language: "ha"
+    target_language: "en"
+    output_file: "sft/doc_tech_10/gemma-3-12b-it_afridocmt_doctech10_ha_en.json"
+  
+  # doc_tech_10 | sw --> en
+  - name: "AfriDocMTDataset"
+    dataset_name_or_path: "masakhane/AfriDocMT"
+    split: "test"
+    subset: "doc_tech_10"
+    num_samples: -1
+    source_language: "sw"
+    target_language: "en"
+    output_file: "sft/doc_tech_10/gemma-3-12b-it_afridocmt_doctech10_sw_en.json"
+  
+  # doc_tech_10 | zu --> en
+  - name: "AfriDocMTDataset"
+    dataset_name_or_path: "masakhane/AfriDocMT"
+    split: "test"
+    subset: "doc_tech_10"
+    num_samples: -1
+    source_language: "zu"
+    target_language: "en"
+    output_file: "sft/doc_tech_10/gemma-3-12b-it_afridocmt_doctech10_zu_en.json"
+  
+  # doc_tech_10 | am --> en
+  - name: "AfriDocMTDataset"
+    dataset_name_or_path: "masakhane/AfriDocMT"
+    split: "test"
+    subset: "doc_tech_10"
+    num_samples: -1
+    source_language: "am"
+    target_language: "en"
+    output_file: "sft/doc_tech_10/gemma-3-12b-it_afridocmt_doctech10_am_en.json"
+  
+  # doc_tech_10| en --> yo
+  - name: "AfriDocMTDataset"
+    dataset_name_or_path: "masakhane/AfriDocMT"
+    split: "test"
+    subset: "doc_tech_10"
+    num_samples: -1
+    source_language: "en"
+    target_language: "yo"
+    output_file: "sft/doc_tech_10/gemma-3-12b-it_afridocmt_doctech10_en_yo.json"
+  
+  # doc_tech_10 | en --> ha
+  - name: "AfriDocMTDataset"
+    dataset_name_or_path: "masakhane/AfriDocMT"
+    split: "test"
+    subset: "doc_tech_10"
+    num_samples: -1
+    source_language: "en"
+    target_language: "ha"
+    output_file: "sft/doc_tech_10/gemma-3-12b-it_afridocmt_doctech10_en_ha.json"
+  
+  # doc_tech_10 | en --> sw
+  - name: "AfriDocMTDataset"
+    dataset_name_or_path: "masakhane/AfriDocMT"
+    split: "test"
+    subset: "doc_tech_10"
+    num_samples: -1
+    source_language: "en"
+    target_language: "sw"
+    output_file: "sft/doc_tech_10/gemma-3-12b-it_afridocmt_doctech10_en_sw.json"
+  
+  # doc_tech_10 | en --> zu
+  - name: "AfriDocMTDataset"
+    dataset_name_or_path: "masakhane/AfriDocMT"
+    split: "test"
+    subset: "doc_tech_10"
+    num_samples: -1
+    source_language: "en"
+    target_language: "zu"
+    output_file: "sft/doc_tech_10/gemma-3-12b-it_afridocmt_doctech10_en_zu.json"
+  
+  # doc_tech_10 | en --> am
+  - name: "AfriDocMTDataset"
+    dataset_name_or_path: "masakhane/AfriDocMT"
+    split: "test"
+    subset: "doc_tech_10"
+    num_samples: -1
+    source_language: "en"
+    target_language: "am"
+    output_file: "sft/doc_tech_10/gemma-3-12b-it_afridocmt_doctech10_en_am.json"
+
+# ================================ 25 ===========================================
+  # doc_tech_25| yo --> en
+  - name: "AfriDocMTDataset"
+    dataset_name_or_path: "masakhane/AfriDocMT"
+    split: "test"
+    subset: "doc_tech_25"
+    num_samples: -1
+    source_language: "yo"
+    target_language: "en"
+    output_file: "sft/doc_tech_25/gemma-3-12b-it_afridocmt_doctech25_yo_en.json"
+
+  # doc_tech_25 | ha --> en
+  - name: "AfriDocMTDataset"
+    dataset_name_or_path: "masakhane/AfriDocMT"
+    split: "test"
+    subset: "doc_tech_25"
+    num_samples: -1
+    source_language: "ha"
+    target_language: "en"
+    output_file: "sft/doc_tech_25/gemma-3-12b-it_afridocmt_doctech25_ha_en.json"
+  
+  # doc_tech_25 | sw --> en
+  - name: "AfriDocMTDataset"
+    dataset_name_or_path: "masakhane/AfriDocMT"
+    split: "test"
+    subset: "doc_tech_25"
+    num_samples: -1
+    source_language: "sw"
+    target_language: "en"
+    output_file: "sft/doc_tech_25/gemma-3-12b-it_afridocmt_doctech25_sw_en.json"
+  
+  # doc_tech_25 | zu --> en
+  - name: "AfriDocMTDataset"
+    dataset_name_or_path: "masakhane/AfriDocMT"
+    split: "test"
+    subset: "doc_tech_25"
+    num_samples: -1
+    source_language: "zu"
+    target_language: "en"
+    output_file: "sft/doc_tech_25/gemma-3-12b-it_afridocmt_doctech25_zu_en.json"
+  
+  # doc_tech_25 | am --> en
+  - name: "AfriDocMTDataset"
+    dataset_name_or_path: "masakhane/AfriDocMT"
+    split: "test"
+    subset: "doc_tech_25"
+    num_samples: -1
+    source_language: "am"
+    target_language: "en"
+    output_file: "sft/doc_tech_25/gemma-3-12b-it_afridocmt_doctech25_am_en.json"
+  
+  # doc_tech_25| en --> yo
+  - name: "AfriDocMTDataset"
+    dataset_name_or_path: "masakhane/AfriDocMT"
+    split: "test"
+    subset: "doc_tech_25"
+    num_samples: -1
+    source_language: "en"
+    target_language: "yo"
+    output_file: "sft/doc_tech_25/gemma-3-12b-it_afridocmt_doctech25_en_yo.json"
+  
+  # doc_tech_25 | en --> ha
+  - name: "AfriDocMTDataset"
+    dataset_name_or_path: "masakhane/AfriDocMT"
+    split: "test"
+    subset: "doc_tech_25"
+    num_samples: -1
+    source_language: "en"
+    target_language: "ha"
+    output_file: "sft/doc_tech_25/gemma-3-12b-it_afridocmt_doctech25_en_ha.json"
+  
+  # doc_tech_25 | en --> sw
+  - name: "AfriDocMTDataset"
+    dataset_name_or_path: "masakhane/AfriDocMT"
+    split: "test"
+    subset: "doc_tech_25"
+    num_samples: -1
+    source_language: "en"
+    target_language: "sw"
+    output_file: "sft/doc_tech_25/gemma-3-12b-it_afridocmt_doctech25_en_sw.json"
+  
+  # doc_tech_25 | en --> zu
+  - name: "AfriDocMTDataset"
+    dataset_name_or_path: "masakhane/AfriDocMT"
+    split: "test"
+    subset: "doc_tech_25"
+    num_samples: -1
+    source_language: "en"
+    target_language: "zu"
+    output_file: "sft/doc_tech_25/gemma-3-12b-it_afridocmt_doctech25_en_zu.json"
+  
+  # doc_tech_25 | en --> am
+  - name: "AfriDocMTDataset"
+    dataset_name_or_path: "masakhane/AfriDocMT"
+    split: "test"
+    subset: "doc_tech_25"
+    num_samples: -1
+    source_language: "en"
+    target_language: "am"
+    output_file: "sft/doc_tech_25/gemma-3-12b-it_afridocmt_doctech25_en_am.json"
+
+
+inference:
+  server: null  # null = start internal vLLM server, or set to "http://host:port/v1"
+  api_key: null
+  port: 30024
+  tensor_parallel_size: 1
+  data_parallel_size: 8
+  gpu_memory_utilization: 0.90
+  max_model_len: 8192
+  max_tokens: 4096
+  temperature: 0.0
+  batch_size: 1
+  max_retries: 3
+  vllm_extra_args: []
+
+metrics:
+  - bleu
+  - chrf
+  - ter
+  - chrf++
+
+output:
+  dir: "results"
+  save_translations: true
