@@ -22,6 +22,8 @@ from transformers import AutoTokenizer
 
 from translation_bench.data.afridoct import AfriDocMTDataset, ModelType
 from translation_bench.data.flores_plus import FloresPlusDataset
+from translation_bench.data.ntrex import NTREXDataset
+from translation_bench.data.afrimte import AfriMTEDataset
 from translation_bench.data.data_class import MiniBatch
 
 logger = logging.getLogger(__name__)
@@ -33,7 +35,9 @@ logging.basicConfig(
 
 DATASET_REGISTRY = {
     "AfriDocMTDataset": AfriDocMTDataset,
-    "FloresPlusDataset": FloresPlusDataset
+    "FloresPlusDataset": FloresPlusDataset,
+    "NTREXDataset": NTREXDataset,
+    "AfriMTEDataset": AfriMTEDataset,
 }
 
 

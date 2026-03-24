@@ -20,6 +20,19 @@ Here is the document to be translated:
 Translation
 """
 
+REASONING_USER_PROMPT = """You are given a document in {source_language}. Your task is to translate the document into {target_language}.
+Please follow these steps to complete the translation:
+- Read the entire document carefully to understand its context and meaning.
+- Identify any cultural references or idiomatic expressions that may need special attention during translation.
+- Show your thought process in <think> </think> tags.
+- And return the final answer in <answer> </answer> tags
+
+Here is the document to be translated:
+{source_text}
+
+Here is how i would translate this text
+"""
+
 
 # Optional pretty names for a few common FLORES+ configs.
 # Keys here are FLORES+ subset/config names.
@@ -69,9 +82,11 @@ class FloresPlusDataset(Dataset):
         tokenizer: AutoTokenizer,
         model_type: ModelType = ModelType.GEMMA,
         hf_token: Optional[str] = None,
+        reasoning: bool = False,
     ):
         self.tokenizer = tokenizer
         self.model_type = model_type
+        self.reasoning = reasoning
         self.chat_template = Environment().from_string(self.tokenizer.chat_template)
 
         self.data = self.load_dataset_hgf(
@@ -106,7 +121,8 @@ class FloresPlusDataset(Dataset):
                 }
             ]
         else:
-            user_prompt = USER_PROMPT.format(
+            prompt_template = REASONING_USER_PROMPT if self.reasoning else USER_PROMPT
+            user_prompt = prompt_template.format(
                 source_language=source_language,
                 target_language=target_language,
                 source_text=source_text,
