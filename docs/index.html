@@ -369,11 +369,11 @@ function comparisonTable(rows) {
       (b.metrics?.['chrf++'] ?? -Infinity) - (a.metrics?.['chrf++'] ?? -Infinity)
       || displayModel(a).localeCompare(displayModel(b))
     );
-    h += '<div class="table-wrap"><table><thead><tr><th>Model</th><th>Samples</th><th>SSA status</th>';
+    h += '<div class="table-wrap"><table><thead><tr><th>Model</th><th>Samples</th>';
     metrics.forEach(metric => h += '<th>' + esc(metric.toUpperCase()) + '</th>');
     h += '</tr></thead><tbody>';
     sorted.forEach(row => {
-      h += '<tr><td class="model-cell">' + esc(displayModel(row)) + '</td><td>' + esc(row.num_samples ?? '—') + '</td><td>' + cometStatus(row) + '</td>';
+      h += '<tr><td class="model-cell">' + esc(displayModel(row)) + '</td><td>' + esc(row.num_samples ?? '—') + '</td>';
       metrics.forEach(metric => {
         const value = row.metrics?.[metric];
         const cls = Number.isFinite(value) && best[metric] === value ? ' class="best"' : '';
